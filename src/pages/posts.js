@@ -13,10 +13,6 @@ const PostsPage = ({
     const siteTitle = 'TEST Site Title';
     const siteDescription = 'Site description';
 
-
-    console.log(edges);
-
-
     return (
         <Layout>
             <Helmet>
