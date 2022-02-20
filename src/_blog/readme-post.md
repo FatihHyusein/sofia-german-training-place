@@ -1,6 +1,9 @@
 ---
-title: Readme date: 2019-08-10 path: /readme-post description: Kick off your project featuredImage: ../_
-blog/images/04.jpg
+title: Readme
+date: 2019-08-10
+path: /readme-post
+description: Kick off your project
+featuredImage: ../_blog/images/04.jpg
 ---
 
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
