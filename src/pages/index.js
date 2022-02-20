@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 
 import Gallery from '../components/Gallery';
 import Layout from '../components/layout';
+import { Link } from 'gatsby';
 
 const HomeIndex = () => {
     const siteTitle = 'TEST Site Title';
@@ -18,6 +19,7 @@ const HomeIndex = () => {
             <div id='main'>
                 <section id='one'>
                     <header className='major'>
+
                         <h2>
                             Ipsum lorem dolor aliquam ante commodo
                             <br/>
@@ -34,9 +36,7 @@ const HomeIndex = () => {
                     </p>
                     <ul className='actions'>
                         <li>
-                            <a href='#' className='button'>
-                                Learn More
-                            </a>
+                            <Link to='posts' className='button'>Posts</Link>
                         </li>
                     </ul>
                 </section>
