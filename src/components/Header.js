@@ -19,28 +19,13 @@ const Header = () => {
                  data-xxl-device-layout='rd-navbar-static' data-lg-stick-up-offset='261px'>
                 <div className='rd-navbar-inner rd-navbar-inner-top'>
                     <div className='rd-navbar-panel'>
-                        {/*<button className='rd-navbar-toggle' data-rd-navbar-toggle='.rd-navbar-nav-wrap'><span/>*/}
-                        {/*</button>*/}
-                        <button className='rd-navbar-collapse-toggle' data-rd-navbar-toggle='.rd-navbar-panel-aside'>
-                            <span/></button>
-                        {/*<div className='rd-navbar-brand'><Link className='brand-name' to='/'>Advoza</Link></div>*/}
                         <div className='rd-navbar-call'>
                             <span className='icon icon-sm icon-rounded material-design-write20 icon-primary'/>
                             <a href='mailto:#' style={{ marginRight: 10 }}>info@demolink.org</a></div>
                         <div className='rd-navbar-call'>
                             <span className='icon icon-sm icon-rounded material-icons-local_phone icon-primary'/><a
-                            href='tel:#'>800-2345-6789</a>
+                            href='tel:#'>0888123456</a>
                         </div>
-                    </div>
-                    <div className='rd-navbar-panel-aside'>
-                        <ul className='list-inline list-inline-lg'>
-                            {/*<li><a className='icon icon-white icon-xs fa-facebook' href='https://facebook.com'*/}
-                            {/*       aria-label={'facebook'}/></li>*/}
-                            {/*<li><a className='icon icon-white icon-xs fa-linkedin' href='https://linkedin.com'*/}
-                            {/*       aria-label={'linkedin'}/></li>*/}
-                        </ul>
-                        <a href='tel:#'>800-2345-6789</a>
-                        <a href='mailto:#'>info@demolink.org</a>
                     </div>
                 </div>
                 <div className='rd-navbar-inner rd-navbar-inner-bottom'
