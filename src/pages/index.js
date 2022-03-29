@@ -139,21 +139,15 @@ const HomeIndex = ({
             </section>
             <section className='section-50 section-sm-65 section-md-85 section-xl-115'>
                 <div className='container text-center'>
-                    <h3>Request a consultation</h3>
-                    <h2>Ask our attorneys</h2>
+                    <h2>Contact us</h2>
                     <div className='row justify-content-md-center row-md'>
                         <div className='col-lg-10 col-xl-8 col-xxl-6'>
                             <p>Would you like to speak to one of our lawyers? Just submit your contact details
                                 and we’ll be in touch shortly. You can also email us if you prefer that type of
                                 communication.</p>
-                            <h6>I would like to discuss</h6>
                             <form className='rd-mailform text-center' data-form-output='form-output-global'
+                                  action='https://getform.io/f/ed801f47-8725-4222-a7d0-44c36602c1bc'
                                   data-form-type='contact' method='post'>
-                                <div className='form-wrap'>
-                                    <label className='form-label' htmlFor='contact-subject'>Your subject</label>
-                                    <input className='form-input' id='contact-subject' type='text'
-                                           name='subject' data-constraints='@Required'/>
-                                </div>
                                 <div className='form-wrap'>
                                     <label className='form-label' htmlFor='contact-name'>Your name</label>
                                     <input className='form-input' id='contact-name' type='text' name='name'
@@ -163,6 +157,11 @@ const HomeIndex = ({
                                     <label className='form-label' htmlFor='contact-email'>Your e-mail</label>
                                     <input className='form-input' id='contact-email' type='email' name='email'
                                            data-constraints='@Email @Required'/>
+                                </div>
+                                <div className='form-wrap'>
+                                    <label className='form-label' htmlFor='contact-message'>Message</label>
+                                    <textarea className='form-input' id='contact-message' name='message'
+                                              data-constraints='@Required'/>
                                 </div>
                                 <button className='btn btn-primary' type='submit'>Submit</button>
                             </form>

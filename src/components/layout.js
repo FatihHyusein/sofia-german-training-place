@@ -845,7 +845,7 @@ const magic = ($, pageTransition, aCounter, aProgressCircle, Util) => {
 
         // RD Input Label
         if (plugins.rdInputLabel.length) {
-            // plugins.rdInputLabel.RDInputLabel();
+            plugins.rdInputLabel.RDInputLabel();
         }
 
         // Regula
