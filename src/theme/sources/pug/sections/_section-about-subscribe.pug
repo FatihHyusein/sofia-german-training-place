@@ -1,0 +1,11 @@
+// Legal News Digest
+section.section-50.section-lg-75.bg-primary.context-dark
+  .container.text-center
+    h4 Legal News Digest
+    p.offset-top-20.offset-md-top-30 Sign up for our legal news digest. It is always informative of the current state of affairs in the state’s and federal legal systems.
+    // RD Mailform
+    form.rd-mailform.text-center.rd-mailform-xs.offset-top-30.offset-md-top-50(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+      .form-wrap
+        label.form-label(for="contact-email") Enter your email
+        input#contact-email.form-input(type="email" name="email" data-constraints="@Email @Required")
+      button(type="submit").btn.btn-primary.mt-0 Subscribe

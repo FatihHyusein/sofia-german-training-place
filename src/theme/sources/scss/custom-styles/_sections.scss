@@ -1,0 +1,21 @@
+//
+// Sections
+// --------------------------------------------------
+
+// Section Spacing
+// -------------------------
+
+$insets: (0, 30px, 35px, 40px, 45px, 50px, 55px, 60px, 65px, 70px, 75px, 80px, 85px, 90px, 95px, 100px, 105px, 115px, 120px, 140px, 160px, 175px,  200px, 210px);
+
+@include indent-responsive(section, '', (padding-top, padding-bottom), $grid-breakpoints, $insets);
+@include indent-responsive(section, top, padding-top, $grid-breakpoints, $insets);
+@include indent-responsive(section, bottom, padding-bottom, $grid-breakpoints, $insets);
+
+.section-100-vh {
+  padding-top: 55px;
+  padding-bottom: 55px;
+  @include media-breakpoint-up(lg) {
+    min-height: 100vh;
+  }
+}
+

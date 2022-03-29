@@ -1,0 +1,60 @@
+include ../_navigation
+
+mixin rd-navbar
+	header.page-head
+		// RD Navbar
+		.rd-navbar-wrap&attributes( attributes )
+			nav.rd-navbar(
+				data-layout='rd-navbar-fixed',
+				data-sm-layout='rd-navbar-fixed',
+				data-sm-device-layout='rd-navbar-fixed',
+				data-md-layout='rd-navbar-fixed',
+				data-md-device-layout='rd-navbar-fixed',
+				data-lg-layout='rd-navbar-static',
+				data-lg-device-layout="rd-navbar-static",
+				data-xl-layout='rd-navbar-static',
+				data-xl-device-layout="rd-navbar-static",
+				data-xxl-layout='rd-navbar-static',
+				data-xxl-device-layout="rd-navbar-static",
+				data-lg-stick-up-offset="261px"
+			)
+				.rd-navbar-inner.rd-navbar-inner-top
+					// RD Navbar Panel
+					.rd-navbar-panel
+						// RD Navbar Toggle
+						button.rd-navbar-toggle(data-rd-navbar-toggle='.rd-navbar-nav-wrap')
+							span
+						button.rd-navbar-collapse-toggle(data-rd-navbar-toggle='.rd-navbar-panel-aside')
+							span
+						// RD Navbar Brand
+						.rd-navbar-brand: a.brand-name(href='index.html')= logo.name
+						.rd-navbar-call
+							span.icon.icon-sm.icon-rounded.material-icons-local_phone.icon-primary
+							a(href='tel:#') 800-2345-6789
+							a(href='free-consultation.html') Request a Callback
+					.rd-navbar-panel-aside
+						+social-list
+						//RD Navbar Search
+						div.rd-navbar-search
+							a.rd-navbar-search-toggle(data-rd-navbar-toggle=".rd-navbar-search" href="#")
+								span
+							form(action="search-results.html" data-search-live="rd-search-results-live" method="GET").rd-search
+								div.form-wrap
+									label(for="rd-navbar-search-form-input" class="form-label") Search...
+									input(class="rd-navbar-search-form-input form-input form-input-gray-lightest" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off")
+									#rd-search-results-live.rd-search-results-live
+									button.rd-search-form-submit(type="submit")
+						a(href='tel:#') 800-2345-6789
+						a.fixed-link(href='free-consultation.html') Request a Callback
+						a(href='mailto:#') info@demolink.org
+				.rd-navbar-inner.rd-navbar-inner-bottom
+					a.brand-name(href='index.html')
+						+img( logo.default, { retina: true } )
+					.rd-navbar-nav-wrap
+						+navigation( menu )
+					//RD Navbar Collapse
+					.rd-navbar-collapse
+						.rd-navbar-collapse-items
+							span.icon.material-design-write20.icon-xs-big.icon-primary
+							a(href='mailto:#') info@demolink.org
+

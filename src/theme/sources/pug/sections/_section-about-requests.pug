@@ -1,0 +1,18 @@
+// requests on a 24/7 basis
+section.section-50.section-sm-70.section-md-90.section-lg-115.bg-transparent
+  .container.text-center
+    h3 Get in touch
+    h2 Contact us
+    form.rd-mailform.text-center.rd-mailform-small.offset-top-30.offset-md-top-40.offset-lg-top-60(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+      .form-wrap
+        label.form-label(for="contact-name") your name
+        input#contact-name.form-input(type="text" name="name" data-constraints="@Required")
+      .form-wrap
+        label.form-label(for="contact-email-form") your e-mail
+        input#contact-email-form.form-input(type="email" name="email" data-constraints="@Email @Required")
+      .form-wrap
+        label.form-label(for="contact-message") Message
+        textarea#contact-message.form-input(name="message" data-constraints="@Required")
+      button(type="submit").btn.btn-primary Send
+
+      

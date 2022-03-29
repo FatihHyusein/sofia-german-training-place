@@ -1,0 +1,52 @@
+footer.page-footer
+  .container
+    .row.row-40.justify-content-md-around.justify-content-xl-start.text-md-left
+      .col-xl-4.col-xxl-3.col-lg-5.col-md-7
+        a(href='index.html')
+          .brand-footer.h3 Fen
+            span i
+            | more
+          br
+          p we will help anyone out
+        p
+        p.text-gray-lighter Founded by Steven Pfeiffer, Lesley Dingle and Gerald Harrison back in 1989, today their Houston-based law firm is currently the #1 in both yearly cases dealt with and the percentage of all those cases being won.
+      .col-md-3.col-lg-2.col-xxl-3
+        h5 Navigation
+        ul.list
+          li(class=(activeIndex == 3 ? 'active' : '')): a(href='about-us.html') About us
+          li(class=(activeIndex == 4 ? 'active' : '')): a(href='practice-areas.html') Practice Areas
+          li(class=(activeIndex == 5 ? 'active' : '')): a(href='won-cases.html') Won Cases
+          li(class=(activeIndex == 6 ? 'active' : '')): a(href='news.html') News
+          li(class=(activeIndex == 7 ? 'active' : '')): a(href='contacts.html') Contacts
+      .col-md-5.col-lg-4.col-xl-3
+        h5 Contact information
+        address
+          p 4096 N Highland St, Arlington
+            br
+            | VA 32101, USA
+          a(href='mailto:#') info@demolink.org
+          +social-list
+      .col-md-5.col-xl-3.col-xxl-3
+        h5 We are working on
+        .list-terms-footer
+          dl
+            dt Mon-Thu:
+            dd 9:30 - 21:00
+          dl
+            dt Fri:
+            dd 6:00 - 21:00
+          dl
+            dt Sat:
+            dd 10:00 - 15:00
+    .row.text-center.offset-top-55
+      .col-lg-12
+        p.copyright
+          span(class="copyright-year")
+          ="\t"
+          | &#169;
+          ="\t"
+          | Advoza. All Rights Reserved
+          span.divider-vertical |
+          ="\t"
+          a(href="privacy-policy.html") Privacy Policy
+          block footerLink

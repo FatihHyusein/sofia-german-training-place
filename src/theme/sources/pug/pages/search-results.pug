@@ -1,0 +1,28 @@
+extends  ../_skeleton
+include ../sections/_header-default
+
+block variables
+  - pageName = 'Search Results';
+
+block title
+  title= pageName
+
+block page
+  // Page Header
+  +rd-navbar().active
+
+  // Page Content
+  main.page-content
+    section.section-50.section-md-85.section-xl-115.bg-transparent
+      .container
+        // RD Search
+        form.rd-search.offset-top-40(action="search-results.html", method="GET")
+          .form-wrap
+            label(for="rd-search-form-input" class="form-label") Search
+            input(class="form-input" id="rd-search-form-input" type="text" name="s" autocomplete="off")
+          button.rd-search-form-submit.material-icons-search(type='submit')
+        h2.offset-top-60 Search results
+        .rd-search-results.offset-top-40
+
+  // Page Footer
+  include ../sections/_footer-default

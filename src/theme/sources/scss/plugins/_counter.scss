@@ -1,0 +1,215 @@
+.counter-wrap {
+  .counter{
+    width: 90px;
+    height: 90px;
+    line-height: 90px;
+    margin: 0 auto;
+    font-size: 26px;
+    font-weight: 700;
+    border-radius: 50%;
+    border: 2px solid $primary;
+    @include transition(.3s ease-out all);
+    &:hover {
+      background-color: $primary;
+    }
+  }
+  @include media-breakpoint-up(md) {
+    .counter {
+      font-size: 40px;
+      width: 154px;
+      height: 154px;
+      line-height: 154px;
+    }
+  }
+  @include media-breakpoint-up(xxl) {
+    [class*="cell-"] {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+}
+
+
+
+.countdown-section {
+  display: inline-block;
+  position: relative;
+
+}
+
+.countdown-section + .countdown-section {
+  position: relative;
+  padding-left: 20px;
+
+  @include media-breakpoint-up(lg) {
+    padding-left: 88px;
+
+    &:before {
+      content: ":";
+      display: inline-block;
+      position: absolute;
+      color: $primary;
+      font-weight: 800;
+      top: 5px;
+      font-size: 50px;
+      left: 35px;
+    }
+  }
+
+}
+
+.countdown-period,
+.countdown-amount {
+  display: block;
+}
+
+.countdown-amount {
+  font-size: 30px;
+  color: $white;
+  font-weight: 800;
+  text-align: center;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 60px;
+  }
+}
+
+.countdown-period {
+  color: $white;
+  margin-top: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-style: normal;
+  font-size: 14px;
+
+  &:after {
+    content: '(s)';
+  }
+}
+
+//.coundowd-small
+//
+.coundowd-small {
+  .countdown-amount {
+    @include media-breakpoint-up(lg) {
+      font-size: 46px;
+    }
+  }
+  .countdown-period {
+    font-size: 12px;
+  }
+  .countdown-section + .countdown-section {
+    @include media-breakpoint-up(lg) {
+      padding-left: 25px;
+      &:before {
+        top: -5px;
+        left: 7px;
+      }
+    }
+  }
+}
+
+//coundowd-round
+//
+.coundowd-round {
+
+  .countdown-amount {
+    text-align: center;
+    color: $white;
+    height: 75px;
+    width: 75px;
+    line-height: 75px;
+    border-radius: 50%;
+    background: $primary;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .countdown-period {
+    margin-top: 5px;
+    text-align: center;
+  }
+
+  .countdown-section + .countdown-section {
+    &:before {
+      color: $white;
+      height: 50px;
+      line-height: 48px;
+    }
+  }
+
+  .countdown-section {
+    &:last-child {
+      @include media-breakpoint-down(xs) {
+        display: none !important;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .countdown-amount {
+      height: 70px;
+      width: 70px;
+      line-height: 68px;
+    }
+
+    .countdown-section + .countdown-section {
+      &:before {
+        height: 70px;
+        line-height: 68px;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .countdown-amount {
+      height: 137px;
+      width: 137px;
+      line-height: 120px;
+    }
+
+    .countdown-section + .countdown-section {
+      padding-left: 0;
+      margin-left: 20px;
+
+      &:before {
+        line-height: 135px;
+        left: -19px;
+      }
+    }
+
+    .countdown-period {
+      position: absolute;
+      top: 85px;
+      left: 50%;
+      @include transform (translateX(-50%));
+      color: $white;
+    }
+  }
+
+  @include media-breakpoint-up(xxl) {
+    .countdown-amount {
+      height: 174px;
+      width: 174px;
+      line-height: 150px;
+    }
+    .countdown-period {
+      top: 100px;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .countdown-section + .countdown-section {
+      margin-left: 48px;
+
+      &:before {
+        left: -30px;
+      }
+    }
+  }
+}
+
+h3 + .countdown {
+  margin-top: 7px;
+}
+

@@ -1,0 +1,34 @@
+extends  ../_skeleton
+include ../sections/_header-default
+
+block variables
+  - pageName = '404';
+
+block title
+  title= pageName
+
+block page
+  // Page Header
+  +rd-navbar().active
+
+  // Page Content
+  main.page-content
+    // 404
+    section.section-50.section-md-80.section-xl-115
+      .container
+        .row.section-404
+          .col-lg-12.text-center
+            h1 404
+            h2.offset-top-35 The page was not found.
+            a.btn.btn-primary.offset-md-top-45.offset-lg-top-60(href='index.html') Visit home page
+            h4.offset-top-30.offset-lg-top-45.offset-xl-top-55 Unfortunately, the page you were looking for could not be found. Maybe search can help.
+            // RD Search
+            form.rd-search.offset-top-40.rd-search-small(action="search-results.html", method="GET")
+              .form-wrap
+                label(for="rd-search-form-input" class="form-label") Search...
+                input(class="form-input" id="rd-search-form-input" type="text" name="s" autocomplete="off")
+              button.rd-search-form-submit.material-icons-search(type='submit')
+          
+
+  // Page Footer
+  include ../sections/_footer-default

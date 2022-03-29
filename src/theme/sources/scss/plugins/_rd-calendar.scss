@@ -1,0 +1,168 @@
+/*
+* @subsection   RD Calendar
+*
+*
+* @author       Evgeniy Gusarov
+* @see          https://ua.linkedin.com/pub/evgeniy-gusarov/8a/a40/54a
+* @version      1.0.0
+*/
+@import "../custom-styles/variables-custom";
+
+.rd-calendar {
+
+  &.show-events {
+  }
+}
+
+// Today
+.rdc-today_day {
+}
+
+.rdc-today_date {
+}
+
+.rdc-today_month {
+}
+
+.rdc-today_fullyear {
+}
+
+// Panel
+.rdc-panel {
+  position: relative;
+  padding: 11px 8px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-transform: uppercase;
+  color: $white;
+  background-color: $primary;
+}
+
+// Controls
+.rdc-next, .rdc-prev, .rdc-events_close {
+  color: $white;
+  font: 400 18px/38px "FontAwesome";
+  cursor: pointer;
+  transition: .3s all ease;
+
+  &:hover {
+    color: $gray-darker;
+  }
+}
+
+.rdc-next, .rdc-prev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.rdc-next {
+  right: 15px;
+  &:before {
+    content: '\f061';
+  }
+}
+
+.rdc-prev {
+  left: 15px;
+
+  &:before {
+    content: '\f060';
+  }
+}
+
+.rdc-events_close {
+  &:before {
+    content: '\f00d';
+  }
+}
+
+// Events
+.rdc-events {
+  opacity: 0;
+  visibility: hidden;
+  transition: .4s all ease-in-out;
+
+  .rd-calendar.show-events & {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.rdc-event {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+// Table
+.rdc-table {
+  position: relative;
+  width: 100%;
+  border: 1px solid $mishka;
+  table {
+    width: 100%;
+    padding: 12px 8px 26px;
+    border-spacing: 4px;
+    border-collapse: separate;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  td {
+    position: relative;
+  }
+}
+
+.rdc-month,
+.rdc-fullyear {
+  display: inline-block;
+}
+
+.rdc-month {
+}
+
+.rdc-fullyear {
+}
+
+.rdc-table_day {
+  color: $gray-darker;
+  padding: 7px 2px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.rdc-table_date {
+  min-width: 30px;
+  height: 31px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 31px;
+  padding: 7px 2px;
+  color: $gray-darker;
+  text-align: center;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+
+.rdc-table_today {
+}
+
+.rdc-table_event {
+  cursor: pointer;
+  transition: .3s all ease;
+
+  &:hover {
+    color: #fff;
+    background-color: $gray;
+  }
+}
+
+.rdc-table_next,
+.rdc-table_prev {
+  opacity: .5;
+}

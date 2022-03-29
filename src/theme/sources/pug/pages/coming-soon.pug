@@ -1,0 +1,42 @@
+extends  ../_skeleton
+include ../sections/_header-default
+include ../elements/countdown
+
+include ../elements/_subscribe-form
+
+block variables
+  - pageName = 'Coming Soon';
+
+block title
+  title= pageName
+
+block page
+  // Page Header
+  +rd-navbar().active
+
+  // Page Content
+  main.page-content.parallax-custom
+    // This site is coming soon
+    section.section.parallax-container(data-parallax-img='images/coming-soon-01-1920x1480.jpg')
+      .parallax-content.section-50.section-sm-75.section-md-90.section-lg-100.section-xl-210
+        .container.text-center
+          h3.text-white This site
+          h2 is coming soon
+          .offset-top-35.offset-sm-top-40.offset-md-top-60
+            // Countdown
+            +countdown({ to: '2021-12-31' })
+          .offset-top-35.offset-sm-top-40.offset-md-top-60
+            h3.text-white Sign up
+            h2.text-primary to receive updates
+          .offset-top-35.offset-sm-top-40.offset-md-top-60
+            p.text-white Get both our special offers and our useful tips directly to your inbox!
+            form.rd-mailform.text-center.offset-top-30.offset-sm-top-40.rd-mailform-small(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+              .form-wrap
+                label.form-label(for="contact-name") Your name
+                input#contact-name.form-input(type="text" name="name" data-constraints="@Required")
+              .form-wrap
+                label.form-label(for="contact-email-form") Your e-mail
+                input#contact-email-form.form-input(type="email" name="email" data-constraints="@Email @Required")
+              button(type="submit").btn.btn-primary Submit
+  // Page Footer
+  include ../sections/_footer-default

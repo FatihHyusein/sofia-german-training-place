@@ -12,7 +12,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
     const result = await graphql(`
     {
-      allMarkdownRemark {
+      allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/blog/"  }}) {
         edges {
           node {
             frontmatter {
@@ -32,5 +32,26 @@ exports.createPages = async ({ actions, graphql }) => {
             path: node.frontmatter.path,
             component: path.resolve(`src/templates/post.js`),
         });
+    });
+};
+
+exports.onCreateWebpackConfig = ({
+                                     actions,
+                                 }) => {
+    const { setWebpackConfig } = actions;
+    setWebpackConfig({
+        externals: {
+            jquery: 'jQuery', // important: 'Q' capitalized
+            $: 'jQuery', // important: 'Q' capitalized
+            regula: 'regula'
+        },
+        resolve: {
+            fallback: {
+                fs: false,
+                path: require.resolve('path-browserify'),
+                stream: require.resolve('stream-browserify'),
+                util: require.resolve('util/'),
+            }
+        }
     });
 };

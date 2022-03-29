@@ -1,0 +1,11 @@
+mixin person(obj)
+  .d-inline-block.person-block
+    +jpg_responsive(obj.image)
+    h4.offset-top-20: a(href='#')= obj.title
+    p= obj.content
+
+mixin person-social-list(obj)
+  ul.list-inline.list-inline-xs
+    li: a.icon.icon-primary.icon-round-small.fa-facebook.icon-xs-small(href="#")
+    li: a.icon.icon-primary.icon-round-small.fa-twitter.icon-xs-small(href="#")
+    li: a.icon.icon-primary.icon-round-small.fa-google-plus.icon-xs-small(href="#")

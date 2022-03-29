@@ -1,0 +1,195 @@
+//
+// Offsets
+// --------------------------------------------------
+
+// Insets
+// -------------------------
+
+$insets: (0, 5px,  10px, 15px, 20px, 25px, 30px, 35px, 40px, 45px, 50px, 55px, 60px, 65px, 70px, 90px, 120px);
+
+@include indent-responsive(inset, left, padding-left, $grid-breakpoints, $insets);
+@include indent-responsive(inset, right, padding-right, $grid-breakpoints, $insets);
+
+// Elements
+// -------------------------
+
+// Grid
+// -------------------------
+
+// Sections
+// -------------------------
+
+// Responsive
+// -------------------------
+$preffix: (-70px, -30px, -25px, -10px, -5px, 0, 5px, 10px, 15px, 30px, 45px, 70px);
+@include indent-responsive(preffix, left, margin-left, $grid-breakpoints, $preffix);
+
+$postfix: (-70px, -30px, -25px, -10px, -5px, 0, 5px, 10px, 15px, 30px, 45px, 70px);
+@include indent-responsive(postfix, right, margin-right, $grid-breakpoints, $postfix);
+
+html {
+  * + .offset-top-0 { margin-top: 0; }
+  * + .offset-top-15 { margin-top: 15px; }
+  * + .offset-top-20 { margin-top: 20px; }
+  * + .offset-top-30 { margin-top: 30px; }
+  * + .offset-top-35 { margin-top: 35px; }
+  * + .offset-top-40 { margin-top: 40px; }
+  * + .offset-top-55 { margin-top: 55px; }
+  * + .offset-top-60 { margin-top: 60px; }
+  * + .offset-top-65 { margin-top: 65px; }
+  * + .offset-top-80 { margin-top: 80px; }
+
+  @include media-breakpoint-up(sm) {
+    * + .offset-sm-top-0 { margin-top: 0; }
+    * + .offset-sm-top-30 { margin-top: 30px; }
+    * + .offset-sm-top-40 { margin-top: 40px; }
+  }
+
+  @include media-breakpoint-up(md) {
+    * + .offset-md-top-25 { margin-top: 25px; }
+    * + .offset-md-top-30 { margin-top: 30px; }
+    * + .offset-md-top-40 { margin-top: 40px; }
+    * + .offset-md-top-45 { margin-top: 45px; }
+    * + .offset-md-top-50 { margin-top: 50px; }
+    * + .offset-md-top-60 { margin-top: 60px; }
+    * + .offset-md-top-65 { margin-top: 65px; }
+    * + .offset-md-top-80 { margin-top: 80px; }
+  }
+
+  @include media-breakpoint-up(lg) {
+    * + .offset-lg-top-60 { margin-top: 60px; }
+  }
+
+  @include media-breakpoint-up(xl) {
+    * + .offset-xl-top-40 { margin-top: 40px; }
+    * + .offset-xl-top-55 { margin-top: 55px; }
+    * + .offset-xl-top-60 { margin-top: 60px; }
+    * + .offset-xl-top-70 { margin-top: 70px; }
+    * + .offset-xl-top-80 { margin-top: 80px; }
+    * + .offset-xl-top-95 { margin-top: 95px; }
+  }
+}
+
+html .page {
+  .inset-top-0 { padding-top: 0; }
+}
+
+.inset-28 {
+  @include media-breakpoint-up(xxl) { padding: 0 23%; }
+}
+
+
+// Classes
+* + .quote-default { margin-top: 65px; }
+* + .quote-default + p { margin-top: 45px; }
+* + .rd-mailform { margin-top: 30px; }
+* + .row { margin-top: 35px; }
+* + .row-md { margin-top: 30px; }
+* + .swiper-custom { margin-top: 50px; }
+* + .swiper-thumb { margin-top: 30px; }
+* + .well-custom { margin-top: 40px; }
+.counter + * { margin-top: 10px; }
+
+// Tags + Classes
+p + .btn { margin-top: 25px; }
+h1 + .btn { margin-top: 15px; }
+h1 + .btn-info { margin-top: 25px; }
+h2 + .btn { margin-top: 30px; }
+h2 + .list-inline { margin-top: 30px; }
+h4 + .post { margin-top: 40px; }
+h4 + .rd-calendar { margin-top: 30px; }
+h4 + .list,
+h5 + .list { margin-top: 25px; }
+
+// Classes + tags
+.progress-bar-circle + h6 { margin-top: 25px; }
+.text-info + p { margin-top: 40px; }
+
+// Classes + Classes
+.form-wrap + .btn { margin-top: 21px; }
+.post + .post { margin-top: 40px; }
+.row + .btn { margin-top: 30px; }
+
+// Tag + tag
+p + p { margin-top: 15px; }
+p + h6 { margin-top: 25px; }
+h3 + h2 { margin-top: 5px; }
+h1 + p { margin-top: 15px; }
+h2 + p { margin-top: 15px; }
+h3 + p { margin-top: 15px; }
+h4 + p { margin-top: 15px; }
+h5 + p { margin-top: 15px; }
+h6 + p { margin-top: 15px; }
+
+p + img {
+  margin-top: 16px;
+
+  & + p { margin-top: 16px; }
+}
+
+h5 + h4 {
+  margin-top: 30px;
+
+  & + img {
+    margin-top: 45px;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  * + .swiper-thumb { margin-top: 40px; }
+}
+
+@include media-breakpoint-up(md) {
+  h4 + .list,
+  h5 + .list { margin-top: 25px; }
+}
+
+@include media-breakpoint-up(lg) {
+  * + .quote-default + p { margin-top: 50px; }
+  * + .row { margin-top: 60px; }
+  p + .btn { margin-top: 45px; }
+  p + h6 { margin-top: 30px; }
+  h1 + p { margin-top: 25px; }
+  h2 + p { margin-top: 25px; }
+  h3 + p { margin-top: 25px; }
+  h1 + .btn { margin-top: 25px; }
+	h4 + .rd-calendar { margin-top: 50px; }
+}
+
+@include media-breakpoint-up(xl) {
+  * + .quote-default { margin-top: 75px; }
+  * + .swiper-thumb { margin-top: 60px; }
+  .counter + * { margin-top: 15px; }
+  .text-info + p { margin-top: 60px; }
+  .row + .btn { margin-top: 45px; }
+}
+
+@include media-breakpoint-up(xxl) {
+  .counter + * { margin-top: 20px; }
+  * + .rd-mailform { margin-top: 30px; }
+  .row + .btn { margin-top: 60px; }
+  p + h6 { margin-top: 45px; }
+  h3 + h2 { margin-top: 15px; }
+}
+
+
+// Range spacing
+.row-0 { @include grid-offset(0px); }
+.row-20 { @include grid-offset(20px); }
+.row-30 { @include grid-offset(30px); }
+.row-35 { @include grid-offset(35px); }
+.row-40 { @include grid-offset(40px); }
+.row-50 { @include grid-offset(50px); }
+.row-60 { @include grid-offset(60px); }
+
+@include media-breakpoint-up(sm) {
+  .row-sm-80 { @include grid-offset(80px); }
+}
+
+@include media-breakpoint-up(md) {
+  .row-md-30 { @include grid-offset(30px); }
+}
+
+@include media-breakpoint-up(xl) {
+  .row-xl-50 { @include grid-offset(50px); }
+}

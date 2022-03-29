@@ -1,0 +1,61 @@
+extends  ../_skeleton
+include ../sections/_header-default
+
+include ../elements/_subscribe-form
+include ../elements/_ui-rd-audio
+include ../elements/_ui-rd-audio-with-small-img
+
+block variables
+  - pageName = 'Single Post';
+  - var acrivePost = 1
+
+block title
+  title= pageName
+
+block page
+  // Page Header
+  +rd-navbar().active
+
+  // Page Content
+  main.page-content
+    section.section-50.section-sm-70.section-xl-115.bg-transparent
+      .container
+        .row.row-20
+          .col-xl-8.col-xxl-9
+            .inset-xl-right-45.inset-xxl-right-0
+              article.news-post
+                .news-post-header
+                  +jpg_responsive('news-01-1280x506')
+                .news-post-body
+                  h2 Can you be fined with $1600 for missing a license plate decal?
+                  ul.list-inline
+                    li: a.h6.text-regular(href='#'): time(datetime='2020') 16.06.2020
+                    li
+                      p.h6.text-regular.text-content by
+                        ="\t"
+                        a.link-inherit(href='#') admin
+                    li
+                      a.h6.text-regular(href='#')
+                        span.icon.material-icons-chat_bubble_outline
+                        ="\t"
+                        | 3 comment(s)
+                  p Just recently a Texas municipal court judge had fined a woman $1,590 for a decal on her car license plate being missing… Though just a few days after, she has obviously changed her mind about the penalty and its amount.
+                  p The Atlanta Journal-Constitution last week reported on the plight of 52-year-old Fulton County resident Linda Ford and what the paper described as an “outlandish” fine that had been imposed by Grantville Municipal Court Judge Lisa R. Reeves. The woman repeatedly tried to pay the fine at once, but she just missed a deadline…
+                  p Ms. Ford’s troubles began last fall…
+                  p It was then, when on an unfortunate occasion she’s been driving past the local police department building, as the Grantville, TX police officer pulled her over.
+                  h5 According to the journalists, that’s what happened next:
+                  p She’s been driving to the local church’s yard sale, where she intended to raise some money for homeless women of Grantville.
+                  p While she passed the police building, the officer pulled her over, he said, because her license plate cover had too much tint.
+                  p Despite the fact that it was the dirt — not tinting — blown from the car’s exhaust that made it difficult to read her plate, the officer didn’t bother to mind it.
+                  p It was then, when on an unfortunate occasion she’s been driving past the local police department building, as the Grantville, TX police officer pulled her over.
+                  p And that was then when the story began to become eerie…
+                include ../elements/_news-post-content
+                include ../elements/_news-post-written
+                include ../elements/_news-post-comments
+                include ../elements/_leave-reply
+          .col-xl-4.col-xxl-3
+            include ../elements/_aside-right-elements
+
+
+  // Page Footer
+  include ../sections/_footer-default

@@ -1,0 +1,28 @@
+extends  ../_skeleton
+include ../sections/_header-default
+
+block variables
+	- pageName = 'Home';
+
+block title
+	title= pageName
+
+block page
+	// Page Header
+	+rd-navbar()
+
+	// Page Content
+	main.page-content
+		include ../sections/_section-home-swiper-default
+		include ../sections/_section-home-practice-areas
+		include ../sections/_section-home-winning
+		include ../sections/_section-home-whatever
+		include ../sections/_section-home-recent-info
+		include ../sections/_section-home-people
+		include ../sections/_section-home-clients
+		include ../sections/_section-home-brands
+		include ../sections/_section-home-contact
+		include ../sections/_section-home-google-map
+
+	// Page Footer
+	include ../sections/_footer-default

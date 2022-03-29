@@ -1,0 +1,21 @@
+// Request a free legal consultation
+section.section-50.section-sm-65.section-md-85.section-xl-115
+  .container.text-center
+    h3 Request a consultation
+    h2 Ask our attorneys
+    .row.justify-content-md-center.row-md
+      .col-lg-10.col-xl-8.col-xxl-6
+        p Would you like to speak to one of our lawyers? Just submit your contact details and we’ll be in touch shortly. You can also email us if you prefer that type of communication.
+        h6 I would like to discuss
+        // RD Mailform
+        form.rd-mailform.text-center(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+          .form-wrap
+            label.form-label(for="contact-subject") Your subject
+            input#contact-subject.form-input(type="text" name="subject" data-constraints="@Required")
+          .form-wrap
+            label.form-label(for="contact-name") Your name
+            input#contact-name.form-input(type="text" name="name" data-constraints="@Required")
+          .form-wrap
+            label.form-label(for="contact-email") Your e-mail
+            input#contact-email.form-input(type="email" name="email" data-constraints="@Email @Required")
+          button(type="submit").btn.btn-primary Submit

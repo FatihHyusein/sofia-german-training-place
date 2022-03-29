@@ -1,0 +1,24 @@
+include ../elements/progress-circle
+
+// Counters
+section.section-50.section-sm-75.section-md-80.section-lg-115.bg-gray-darker.text-center
+	.container
+		.row.row-40.justify-content-center
+			.col-sm-6.col-md-4
+				// Circle Progress Bar
+				+progress-circle({
+					title: 'A percentage of individual cases that we take yearly, on average',
+					value: 50
+				})
+			.col-sm-6.col-md-4
+				// Circle Progress Bar
+				+progress-circle({
+					title: 'A share of commercial/business cases that we process yearly',
+					value: 50
+				})
+			.col-sm-6.col-md-4
+				// Circle Progress Bar
+				+progress-circle({
+					title: 'This is how many cases we end up winning, either civil or commercial',
+					value: 98
+				})

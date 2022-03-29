@@ -1,0 +1,24 @@
+extends  ../_skeleton
+include ../sections/_header-default
+
+include ../elements/_person
+
+block variables
+  - pageName = 'Won cases';
+
+block title
+  title= pageName
+
+block page
+  // Page Header
+  +rd-navbar()
+
+  // Page Content
+  main.page-content
+    include ../sections/_section-won-cases-won-cases
+    include ../sections/_section-won-cases-brands
+    include ../sections/_section-home-recent-info
+    include ../sections/_section-about-requests
+
+  // Page Footer
+  include ../sections/_footer-default

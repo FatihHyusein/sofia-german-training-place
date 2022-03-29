@@ -1,0 +1,78 @@
+//Blockquote Custom
+.quote {
+  &-hooks {
+    display: block;
+    height: 31px;
+    font-family: 'Times New Roman';
+    font-size: 60px;
+    line-height: 50px;
+    font-weight: 700;
+    color: $primary;
+    @media (min-width: $screen-sm-min) and (max-width: $screen-md-min - 1) {
+      line-height: 44px;
+    }
+    @media (min-width: $screen-md-min) and (max-width: $screen-lg-min - 1) {
+      line-height: 45px;
+    }
+    @include media-breakpoint-up(lg) {
+      font-size: 80px;
+    }
+    @include media-breakpoint-up(xl) {
+      line-height: 31px;
+    }
+  }
+
+  cite {
+    display: block;
+    margin-top: 18px;
+  }
+  &-classic {
+    text-align: center;
+    @include media-breakpoint-up(xl) {
+      text-align: left;
+    }
+    q, cite {
+      display: block;
+    }
+  }
+  &-default {
+    position: relative;
+    padding-left: 10px;
+    padding-right: 10px;
+    &:before {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -20px;
+      width: 34px;
+      height: 26px;
+      line-height: 26px;
+      content: '“';
+      display: block;
+      font-size: 80px;
+      font-weight: 700;
+      color: $primary;
+      @include media-breakpoint-up(lg) {
+        top: -10px;
+        left: 0;
+        transform: translateX(0);
+      }
+    }
+    q {
+      font-style: italic;
+    }
+    @include media-breakpoint-up(lg) {
+      padding-left: 60px;
+      padding-right: 30px;
+    }
+    &-small {
+      &:before {
+        font-size: 65px;
+        font-weight: 400;
+      }
+      @include media-breakpoint-up(lg) {
+        padding-left: 40px;
+      }
+    }
+  }
+}

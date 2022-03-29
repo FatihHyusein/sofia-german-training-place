@@ -1,0 +1,71 @@
+extends  ../_skeleton
+include ../sections/_header-default
+
+include ../elements/_subscribe-form
+
+block variables
+  - pageName = 'Free Consultation';
+
+block title
+  title= pageName
+
+block page
+  // Page Header
+  +rd-navbar().active
+
+  // Page Content
+  main.page-content
+    // Free Consultation
+    section.section-50.section-sm-65.section-md-85.section-lg-95.section-xl-115.bg-transparent
+      .container.text-center
+        .row.row-40.justify-content-lg-center
+          .col-lg-8.col-xl-6
+            +jpg_responsive('free-consultation-01-834x573')
+          .col-lg-8.col-xl-6
+            h3 Request a consultation
+            h2 Ask our attorneys
+            p Would you like to speak to one of our lawyers? Just submit your contact details and we’ll be in touch shortly. You can also email us if you prefer such type of communication.
+            h6 I would like to discuss
+            form.rd-mailform.text-center.offset-top-30(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+              .form-wrap
+                //Select 2
+                select.form-input.select-filter(data-placeholder="choose your subject", data-minimum-results-for-search="Infinity", data-constraints="@Required")
+                  option(value="") not
+                  option(value="2") Human resources planning
+                  option(value="3") Business plan consulting
+                  option(value="4") Exit planning
+                  option(value="5") Interim managers
+                  option(value="6") Strategic planning
+                  option(value="7") Market research
+                  option(value="8") Conflict Management
+                  option(value="9") Governance
+                  option(value="10") Mergers
+                  option(value="11") Acquisitions
+                  option(value="12") Other
+              .form-wrap
+                label.form-label(for="contact-name") your name
+                input#contact-name.form-input(type="text" name="name" data-constraints="@Required")
+              .form-wrap
+                label.form-label(for="contact-email-form") your e-mail
+                input#contact-email-form.form-input(type="email" name="email" data-constraints="@Email @Required")
+              button(type="submit").btn.btn-primary Submit
+
+    // and our advantages
+    section.section-50.section-sm-70.section-lg-90.section-xl-115.bg-transparent
+      .container.text-center
+        h3 Why people choose us
+        h2 Our advantages
+        .row.row-30
+          .col-md-6
+            .box-promo(style='background-image: url(images/free-consultation-02-834x573.jpg);')
+              div
+                h1 About us
+                a.btn.btn-primary(href='about-us.html') Learn more
+          .col-md-6
+            .box-promo(style='background-image: url(images/free-consultation-03-834x573.jpg);')
+              div
+                h1 Won cases
+                a.btn.btn-primary(href='won-cases.html') Learn more
+    include ../sections/_section-about-subscribe
+  // Page Footer
+  include ../sections/_footer-default

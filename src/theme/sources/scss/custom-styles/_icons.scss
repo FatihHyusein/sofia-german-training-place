@@ -1,0 +1,148 @@
+//
+// Icons
+// --------------------------------------------------
+
+// Base styles
+// --------------------------------------------------
+
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  &:before {
+    position: relative;
+    display: inline-block;
+    font-weight: 400;
+    font-style: normal;
+    speak: none;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  &.icon-round-small {
+    border-radius: $border-radius-small;
+    &.icon-primary {
+      color: $white;
+      background-color: $primary;
+    }
+  }
+}
+
+// Alternate icons
+// --------------------------------------------------
+
+.icon-default {
+  color: $body-color;
+}
+
+.icon-primary {
+  color: $primary;
+  &[class^="fl-fill-round"] {
+    color: $white;
+    background-color: $primary;
+  }
+  &.icon-rounded {
+    color: $white;
+    background-color: $primary;
+  }
+}
+
+.icon-white {
+  color: $white;
+}
+
+
+a {
+  &.icon-white {
+    &, &:focus, &:active {
+      color: $white;
+    }
+    &:hover {
+      color: $primary;
+    }
+  }
+  &.icon-shadow-primary {
+    &:hover {
+      box-shadow: 3px 4px 18px 0 $gray-darker;
+    }
+  }
+}
+
+
+.icon-shadow {
+  box-shadow: $shadow-area-custom;
+  &-primary {
+    box-shadow: 3px 4px 18px 0 $primary;
+  }
+}
+
+
+// Button Sizes
+// --------------------------------------------------
+
+.icon-xs-small {
+  font-size: 13px;
+  &.icon-round-small {
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+  }
+}
+
+
+
+.icon-xs {
+  font-size: 16px;
+  &.icon-round-small {
+    width: 39px;
+    height: 39px;
+    line-height: 39px;
+    border-radius: $border-radius-small;
+  }
+}
+
+.icon-xs-middle {
+  font-size: 18px;
+}
+
+.icon-xs-big {
+  font-size: 19px;
+}
+
+.icon-sm {
+  font-size: 20px;
+  &.icon-rounded {
+    width: 39px;
+    height: 39px;
+    line-height: 39px;
+    border-radius: 50%;
+  }
+}
+
+.icon-lg {
+  font-size: 24px;
+  &.icon-round-small {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+  }
+}
+
+.icon-xl {
+  font-size: 68px;
+}
+
+a {
+  &.icon-round-small {
+    &.icon-primary {
+      &, &:focus, &:active {
+        color: $white;
+        background-color: $primary;
+      }
+      &:hover {
+        color: $white;
+        background-color: $gray-darker;
+      }
+    }
+  }
+}

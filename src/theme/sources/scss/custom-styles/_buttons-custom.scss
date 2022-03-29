@@ -1,0 +1,190 @@
+//
+// Custom Buttons Styles
+// --------------------------------------------------
+
+// Base styles
+// --------------------------------------------------
+button {
+  border: none;
+}
+
+html {
+  .btn {
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 1;
+    display: inline-block;
+    max-width: 100%;
+    padding: 8px 20px;
+    cursor: pointer;
+    text-align: center;
+    vertical-align: top;
+    font-weight: 700;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 2px solid;
+    transition: .3s ease-out;
+    border-radius: $border-radius-small;
+    &:focus,
+    &:active,
+    &:active:focus {
+      outline: none;
+    }
+
+    &,
+    &:active,
+    &.active {
+      &:focus,
+      &.focus {
+        box-shadow: none !important;
+      }
+    }
+
+    &:hover,
+    &:focus,
+    &.focus {
+      box-shadow: none;
+    }
+
+    &:active,
+    &.active {
+      box-shadow: none;
+    }
+
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+    }
+  }
+
+  // Alternate buttons
+  // --------------------------------------------------
+
+  .btn-default {
+    &, &:focus, &:active {
+      color: $body-color;
+      border: 1px solid $body-color;
+      background-color: transparent;
+    }
+    &:hover {
+      color: $white;
+      border-color: $body-color;
+      background-color: $body-color;
+    }
+  }
+
+  .btn-primary {
+    &, &:focus, &:active {
+      color: $white;
+      border-color: $primary;
+      background-color: $primary;
+    }
+    &:hover {
+      color: $white;
+      border-color:  $gray-darker;
+      background-color: $gray-darker;
+    }
+  }
+
+  .bg-primary {
+    .btn-primary {
+      &, &:focus, &:active {
+        color: $primary;
+        border-color: $white;
+        background-color: $white;
+      }
+      &:hover {
+        color: $white;
+        border-color:  $gray-darker;
+        background-color: $gray-darker;
+      }
+    }
+  }
+
+  .btn-info {
+    &, &:focus, &:active {
+      color: $white;
+      border-color: $brand-info;
+      background-color: $brand-info;
+    }
+    &:hover {
+      color: $white;
+      border-color:  $gray-darker;
+      background-color: $gray-darker;
+    }
+  }
+
+  // Success appears as green
+  .btn-success {
+  }
+
+  // Info appears as blue-green
+  .btn-info {
+  }
+
+  // Warning appears as orange
+  .btn-warning {
+  }
+
+  // Danger and error appear as red
+  .btn-danger {
+  }
+
+  // Button Sizes
+  // --------------------------------------------------
+
+  .btn-xs {
+  }
+
+  .btn-sm {
+  }
+
+  .btn-lg {
+  }
+
+  // Button Shapes
+  // --------------------------------------------------
+
+  .btn-rect {
+    border-radius: 0;
+  }
+
+  // Button Icon styles
+  // --------------------------------------------------
+
+  .btn {
+
+    &.btn-icon {
+      padding-left: 17px;
+      padding-right: 17px;
+
+      .icon {
+        font-size: 28px;
+        line-height: 28px;
+        vertical-align: middle;
+        transition: 0s;
+      }
+
+      &-left {
+        .icon {
+          float: left;
+          padding-right: 10px;
+        }
+      }
+
+      &-right {
+        .icon {
+          float: right;
+          padding-left: 10px;
+        }
+      }
+
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .btn {
+      padding: 17px 30px;
+    }
+  }
+}

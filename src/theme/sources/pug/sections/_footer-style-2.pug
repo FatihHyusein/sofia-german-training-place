@@ -1,0 +1,17 @@
+footer.page-footer.page-footer-style-2
+  .container
+    .row.row-30.justify-content-md-between
+      .col-lg-6.col-md-8.text-md-left
+        p.copyright
+          span(class="copyright-year")
+          ="\t"
+          | &#169;
+          ="\t"
+          | Advoza. All Rights Reserved
+          span.divider-vertical |
+          ="\t"
+          a(href="privacy-policy.html") Privacy Policy
+          block footerLink
+      .col-lg-6.text-md-right.col-md-4
+        +social-list
+  block footerLink

@@ -1,0 +1,518 @@
+//
+// Custom typography
+// --------------------------------------------------
+
+// Page
+// -------------------------
+
+.page {
+  overflow: hidden;
+}
+
+// Page header
+// -------------------------
+
+.page-header {
+}
+
+// Fonts
+// -------------------------
+
+.font-default {
+  font-family: $font-family-base;
+}
+
+.font-sec {
+  font-family: $font-family-sec;
+}
+
+
+
+// Basic Typography
+// -------------------------
+
+#{headings()} {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: $gray-darker;
+}
+
+h1,
+.h1 {
+  font-size: 36px;
+  line-height: 1.2;
+  @include media-breakpoint-up(md) {
+    font-size: 48px;
+  }
+  @include media-breakpoint-up(lg) {
+    line-height: $h1-line-height;
+    font-size: 52px;
+  }
+  @include media-breakpoint-up(xxl) {
+    font-size: $h1-font-size;
+  }
+}
+
+h2,
+.h2 {
+  font-size: 32px;
+  line-height: 1.33;
+  font-weight: 700;
+  color: $primary;
+  @include media-breakpoint-up(md) {
+    font-size: 42px;
+  }
+  @include media-breakpoint-up(lg) {
+    line-height: $h2-line-height;
+    font-size: $h2-font-size;
+  }
+}
+
+h3,
+.h3 {
+  font-size: 28px;
+  line-height: 1.33;
+
+  @include media-breakpoint-up(md) {
+    font-size: 32px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    line-height: $h3-line-height;
+    font-size: $h3-font-size;
+  }
+}
+
+h4,
+.h4 {
+  font-size: 24px;
+  line-height: 1.33;
+
+  @include media-breakpoint-up(md) {
+    font-size: 25px;
+  }
+  @include media-breakpoint-up(lg) {
+    line-height: $h4-line-height;
+    font-size: $h4-font-size;
+  }
+}
+
+h5,
+.h5 {
+  font-size: 20px;
+  line-height: 1.33;
+  font-weight: 700;
+
+  @include media-breakpoint-up(md) {
+    //font-size: 24px;
+  }
+  @include media-breakpoint-up(lg) {
+    line-height: $h5-line-height;
+    font-size: $h5-font-size;
+  }
+}
+
+h6,
+.h6 {
+  font-size: 17px;
+  line-height: 1.33;
+  font-weight: 700;
+
+  @include media-breakpoint-up(md) {
+    font-size: 18px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    line-height: $h6-line-height;
+    font-size: $h6-font-size;
+  }
+}
+
+a {
+  transition: .3s all ease;
+}
+
+a[href^="callto"] { white-space: nowrap; }
+
+p { margin: 0; }
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  a {
+    @include transition(.3s ease-out all);
+    &, &:focus, &:active {
+      color: $gray-darker;
+    }
+    &:hover {
+      color: $link-color;
+    }
+  }
+  .small {
+    color: $gray-dark;
+  }
+}
+
+a {
+  &.h1,
+  &.h2,
+  &.h3,
+  &.h4,
+  &.h5,
+  &.h6 {
+    &, &:focus, &:active {
+      color: $gray-darker;
+    }
+    &:hover {
+      color: $link-color;
+    }
+  }
+}
+
+small,
+.small {
+  font-size: $font-size-sm;
+  line-height: floor(($font-size-sm * $line-height-small));
+}
+
+code {
+  padding: 2px 5px;
+  font-size: 15px;
+  color: $white;
+  background-color: $primary;
+  border-radius: 0;
+  border: 0;
+}
+
+mark, .mark {
+  background-color: $primary;
+  padding: .1em;
+}
+
+// Lists
+// -------------------------
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list {
+  //@include display-flex-inline;
+  //flex-direction: column;
+  //align-items: flex-start;
+  > li + li { margin-top: $list-offsets; }
+  &-xs {
+    > li + li { margin-top: $list-xs-offsets; }
+  }
+  &-sm {
+    > li + li { margin-top: $list-sm-offsets; }
+  }
+  &-lg {
+    > li + li { margin-top: 10px; }
+  }
+  &-xl {
+    > li + li { margin-top: $list-xl-offsets; }
+  }
+
+  &-xxl {
+    > li + li { margin-top: 40px; }
+  }
+
+  @include media-breakpoint-up(xl) {
+    &-lg {
+      > li + li { margin-top: $list-lg-offsets; }
+    }
+
+    &-xxl {
+      > li + li { margin-top: 60px; }
+    }
+  }
+}
+
+.list-ordered {
+  padding-left: 25px;
+  counter-reset: li;
+  text-align: left;
+
+  > li {
+    &:before {
+      content: counter(li, decimal-leading-zero) '.';
+      counter-increment: li;
+    }
+  }
+}
+
+// List inline
+//
+
+* + .list-inline {
+  margin-top: 30px;
+}
+
+.list-inline {
+  > li {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  @include group(10px, 10px);
+  @include media-breakpoint-up(md) {
+    @include group-media($list-inline-offsets, $list-inline-offsets);
+  }
+  &-xs { @include group($list-inline-xs-offsets, $list-inline-xs-offsets); }
+  &-sm { @include group($list-inline-sm-offsets, $list-inline-sm-offsets); }
+  &-lg {
+    @include group(10px, 10px);
+    @include media-breakpoint-up(lg) {
+      @include group-media($list-inline-lg-offsets, $list-inline-lg-offsets);
+    }
+  }
+  &-xl { @include group($list-inline-xl-offsets, $list-inline-xl-offsets); }
+}
+
+// Description Lists
+dl {
+  margin: 0;
+}
+
+// List terms
+//
+
+.list-terms {
+  dd + dt { margin-top: 40px; }
+  dt + dd { margin-top: 25px; }
+
+  @include media-breakpoint-up(xl) {
+    dd + dt { margin-top: 70px; }
+    dt + dd { margin-top: 30px; }
+  }
+}
+
+// List index
+//
+
+.list-index {
+  counter-reset: li;
+  li {
+    .list-index-counter {
+      &:before {
+        content: counter(li, decimal-leading-zero);
+        counter-increment: li;
+      }
+    }
+  }
+}
+
+// List marked
+//
+
+.list-marked,
+.list-marked-line {
+  li {
+    position: relative;
+  }
+}
+
+.list-marked {
+  li {
+    padding-left: 20px;
+    &:before {
+      content: '\e5cc';
+      font-family: $material-icons;
+      font-size: 16px;
+      display: inline-block;
+      color: $primary;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      @include transform (translateY(-50%));
+    }
+  }
+}
+
+.list-marked-line {
+  li {
+    padding-left: 15px;
+    &:before {
+      content: "-";
+      position: absolute;
+      top: 1px;
+      left: 0;
+    }
+  }
+}
+
+// Misc
+// -------------------------
+
+// Blockquotes
+blockquote {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  border-left: none;
+  q {
+    &:before,
+    &:after { content: none; }
+  }
+  cite { font-style: normal; }
+}
+
+// Addresses
+address {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+// Backgrounds
+// -------------------------
+@mixin bg-adjacent() {
+  &:not([style*='background-']) + &:not([style*='background-']) {
+    padding-top: 0;
+  }
+}
+
+// Contextual backgrounds
+//
+.bg-black {
+  @include bg-variant-custom(#{$black});
+}
+
+.bg-gray {
+  @include bg-variant-custom(#{$gray});
+}
+
+.bg-gray-lightest {
+  @include bg-variant-custom(#{$gray-lightest});
+}
+
+.bg-transparent {
+  background-color: transparent;
+  @include bg-adjacent();
+}
+
+.bg-mask {
+  position: relative;
+  z-index: 0;
+
+  &::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    content: '';
+    background-color: rgba( $white, .6 );
+  }
+}
+
+.bg-accent {
+  color: $white;
+  #{headings()} {
+    color: $white;
+  }
+  background-color: $primary;
+}
+
+.bg-default {
+  background-color: $white;
+}
+
+.bg-gray-darker {
+  #{headings()} {
+    color: $white;
+  }
+  color: $white;
+  background-color: $gray-darker;
+}
+
+html .page {
+  .bg-info {
+    background-color: $brand-info;
+    color: $white;
+    #{headings()} {
+      color: $white;
+    }
+    .btn-primary {
+      &, &:focus, &:active {
+        color: $gray-darker;
+        border-color: $white;
+        background-color: $white;
+        box-shadow: 3px 4px 18px 0 $brand-info;
+      }
+      &:hover {
+        color: $white;
+        border-color: $white;
+        background-color: transparent;
+        box-shadow: 3px 4px 18px 0 $brand-info;
+      }
+    }
+  }
+
+}
+
+// Colors
+// -------------------------
+
+// Contextual colors
+//
+
+.page {
+  @include text-variant('.text-primary', $primary);
+  @include text-variant('.text-black', $black);
+  @include text-variant('.text-dark', $gray-dark);
+  @include text-variant('.text-darker', $gray-darker);
+  @include text-variant('.text-gray', $gray);
+  @include text-variant('.text-gray-light', $gray-light);
+  @include text-variant('.text-gray-lighter', $gray-lighter);
+  @include text-variant('.text-white', $white);
+  @include text-variant('.text-content', $body-color);
+  @include text-variant('.text-info', $brand-info);
+  a {
+    &.text-darker {
+      &, &:focus, &:active {
+        color: $gray-darker;
+      }
+      &:hover {
+        color: $primary;
+      }
+    }
+    &.text-info {
+      &, &:focus, &:active {
+        color: $brand-info;
+      }
+      &:hover {
+        color: $gray-darker;
+      }
+    }
+    &.text-content {
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+}
+
+.link-inherit {
+  color: inherit;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+
+// Context Dark
+.context-dark {
+  color: $white;
+
+  #{headings()} {
+    color: $white;
+  }
+}

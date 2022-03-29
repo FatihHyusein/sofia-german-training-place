@@ -1,0 +1,40 @@
+// Circle Progress Bars
+// --------------------------------------------------
+
+.progress-bar-circle {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  line-height: 1.2;
+  width: 100%;
+  height: auto;
+
+  canvas {
+    vertical-align: middle;
+    @media  (max-width: $screen-lg-min - 1) {
+      width: 140px;
+      height: 140px;
+    }
+    @media (min-width: $screen-lg-min) and (max-width: $screen-xl-min - 1) {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-weight: 700;
+    line-height: 38px;
+    transform: translate(-50%, -50%);
+    font-family: $font-family-sec;
+    @include media-breakpoint-up(lg) {
+      font-size: 40px !important;
+    }
+
+    &:after {
+      content: "%";
+    }
+  }
+}

@@ -1,0 +1,22 @@
+extends  ../_skeleton
+include ../sections/_header-default
+
+include ../elements/_subscribe-form
+
+block variables
+  - pageName = 'Typography';
+
+block title
+  title= pageName
+
+block page
+  // Page Header
+  +rd-navbar().active
+
+  // Page Content
+  main.page-content
+    // Typography
+    include ../sections/_section-typography
+
+  // Page Footer
+  include ../sections/_footer-default

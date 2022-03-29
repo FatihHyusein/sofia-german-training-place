@@ -1,0 +1,67 @@
+-
+	var
+		logo = {
+			default: 'logo-default-398x97.png',
+			inverse: 'logo-inverse-398x97.png',
+			name: 'Advoza'
+		},
+
+		menu = {
+			type: 'root',
+			child: [
+				{
+					title: 'Home',
+					link: 'index.html',
+					home: true
+				},
+
+				{
+					title: 'About us'
+				},
+
+				{
+					title: 'Practice Areas'
+				},
+
+				{
+					title: 'Won Cases'
+				},
+
+				{
+					title: 'News',
+					child: {
+						type: 'dropdown',
+						child: [
+							{ title: 'Single Post' }
+						]
+					}
+				},
+
+				{
+					title: 'Pages',
+					link: '#',
+					child: {
+						type: 'dropdown',
+						child: [
+							{ title: 'Free Consultation' },
+							{ title: 'Coming Soon' },
+							{ title: '404' },
+							{ title: 'Typography' },
+							{ title: 'Privacy Policy' },
+							{ title: 'Search Results' }
+						]
+					}
+				},
+
+				{
+					title: 'Contacts'
+				}
+			]
+		},
+
+		homePage,
+		pageName,
+		pageId,
+		pageClass,
+		htmlClass,
+		breadcrumbs = [];

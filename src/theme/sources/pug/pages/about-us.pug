@@ -1,0 +1,26 @@
+extends  ../_skeleton
+include ../sections/_header-default
+
+block variables
+  - pageName = 'About Us';
+
+block title
+  title= pageName
+
+block page
+  // Page Header
+  +rd-navbar()
+
+  // Page Content
+  main.page-content
+    include ../sections/_section-about-founded
+    include ../sections/_section-about-weStandy
+    include ../sections/_section-about-counters
+    include ../sections/_section-about-our-in-house
+    include ../sections/_section-about-careers
+    include ../sections/_section-about-faq
+    include ../sections/_section-about-requests
+    include ../sections/_section-about-subscribe
+
+  // Page Footer
+  include ../sections/_footer-default

@@ -1,0 +1,219 @@
+//- Img-set-dimensions
+
+//- imgPath - path to image
+//- imgClass - class for image
+
+mixin img-set-dimensions(imgPath, imgClass)
+	-
+		var pos = 0,
+				imgWidth,
+				imgHeight,
+				defPos,
+				xPos,
+				dotPos;
+
+		while(true) {
+			var tpmPos = imgPath.indexOf("-", pos);
+			if(tpmPos == -1) break;
+			defPos = tpmPos;
+			pos = defPos + 1;
+		}
+
+		xPos = imgPath.indexOf('x');
+		dotPos = imgPath.indexOf('.');
+
+		imgWidth = imgPath.substring(defPos + 1, xPos);
+		imgHeight = imgPath.substring(xPos + 1, dotPos);
+
+	img(src= imgPath, width= imgWidth, height= imgHeight, alt="", class= imgClass)
+
+//- Image
+	@param {string} name
+	@param {object} options
+	@param {boolean} options.retina
+mixin img( name, options )
+	-
+		var
+			isExt = /(.jpg|.png|.gif|.svg)$/i.test( name ),
+			isLink = /^(\/\/|http:\/\/|https:\/\/)/.test( name ),
+			size = name.match( /(\d+)x(\d+)/i );
+
+		if ( options && options.retina && size && size.length ) {
+			size[1] = ~~(size[1]/2);
+			size[2] = ~~(size[2]/2);
+		}
+
+		if ( !isLink && !isExt ) {
+			name += '.jpg';
+		}
+
+		if ( !isLink ) {
+			name = 'images/'+ name;
+		}
+
+	img( src= name, alt='', width= size ? size[1] : null, height= size ? size[2] : null )&attributes( attributes )
+
+
+mixin jpg(name)
+	- var size = name.split('-').pop().split('x');
+	img(src='images/' + name + '.jpg', alt='', width=size[0], height=size[1])
+
+
+mixin jpg_responsive-circle(name)
+	- var size = name.split('-').pop().split('x');
+	img.img-responsive.rounded-circle(src='images/' + name + '.jpg', alt='', width=size[0], height=size[1])
+
+
+mixin jpg_responsive(name)
+	- var size = name.split('-').pop().split('x');
+	img.img-responsive(src='images/' + name + '.jpg', alt='', width=size[0], height=size[1])
+
+
+mixin png(name)
+	- var size = name.split('-').pop().split('x');
+	img(src='images/' + name + '.png', alt='', width=size[0], height=size[1])
+
+
+mixin png_responsive(name)
+	- var size = name.split('-').pop().split('x');
+	img.img-responsive(src='images/' + name + '.png', alt='', width=size[0], height=size[1])
+
+mixin png_responsive-circle(name)
+	- var size = name.split('-').pop().split('x');
+	img.img-responsive.rounded-circle(src='images/' + name + '.png', alt='', width=size[0], height=size[1])
+
+
+mixin thumbnail-default(image)
+	figure.thumbnail-default
+		a(data-lightgallery='item', href='images/' + image.name_orginal + '.jpg')
+			+jpg_responsive(image.name)
+
+mixin social-list
+	ul.list-inline.list-inline-lg
+		li: a.icon.icon-white.icon-xs.fa-facebook(href='#')
+		li: a.icon.icon-white.icon-xs.fa-twitter(href='#')
+		li: a.icon.icon-white.icon-xs.fa-google-plus(href='#')
+		li: a.icon.icon-white.icon-xs.fa-linkedin(href='#')
+		li: a.icon.icon-white.icon-xs.fa-pinterest(href='#')
+
+mixin social-list-no-gutter
+	ul.list-inline.list-inline-xs
+		li: a.icon.icon-white.icon-xs.fa-facebook(href='#')
+		li: a.icon.icon-white.icon-xs.fa-twitter(href='#')
+		li: a.icon.icon-white.icon-xs.fa-google-plus(href='#')
+		li: a.icon.icon-white.icon-xs.fa-linkedin(href='#')
+		li: a.icon.icon-white.icon-xs.fa-pinterest(href='#')
+
+
+mixin box-info(obj)
+	.box-info(class= obj.type == undefined ? '' : obj.type)
+		.box-info-content
+			span.icon.icon-xl.icon-primary(class= obj.icon)
+			h4: a(href='#')= obj.title
+			p= obj.content
+
+mixin box-info-count(obj)
+	.box-info.box-info-count
+		.box-info-content
+			.count= obj.count
+			h4: a(href='#')= obj.title
+			p= obj.content
+
+
+
+mixin box-info-brand(obj)
+	.box-info.box-info-brand
+		.box-info-content
+			a(href='#')
+				+png_responsive(obj.image)
+			h4.offset-top-20: a(href='#')= obj.title
+			p= obj.content
+			p= "Result: " + obj.result
+
+mixin post-classic(obj)
+	article.post.post-classic
+		.post-header
+			a(href='single-post.html')
+				+jpg_responsive(obj.image)
+		.post-meta
+			time(datetime='2020-08-12')= obj.time
+			="\t"
+			span.divider-vertical |
+			="\t"
+			span by
+			="\t"
+			a(href='single-post.html')= obj.author
+		.post-title
+			h4: a(href='single-post.html')= obj.content
+		a.btn.btn-primary(href='single-post.html') Read more
+
+mixin post(obj)
+	article.post.text-left
+		.unit.flex-row.unit-spacing-xs
+			.unit-left
+				+jpg(obj.image)
+			.unit-body
+				a(href='single-post.html')= obj.title
+				.post-meta
+					time(datetime='2020-08-12')= obj.time
+		p= obj.content
+
+mixin blockquote-classic(obj)
+	blockquote.quote.quote-classic
+		.unit.flex-column.flex-xl-row
+			.unit-left
+				+jpg_responsive-circle(obj.image)
+			.unit-body
+				span.quote-hooks “
+				q= obj.q
+				cite.h6= "— " + obj.cite
+
+mixin blockquote-classic-1(obj)
+	blockquote.quote.quote-classic
+		.unit.flex-column.flex-xl-row
+			.unit-left
+				+png_responsive-circle(obj.image)
+			.unit-body
+				span.quote-hooks “
+				q= obj.q
+				cite.h6= "— " + obj.cite
+
+
+mixin pricing-box(obj)
+	.pricing-box.text-center(class= obj.type == undefined ? '' : obj.type)
+		.pricing-box-title
+			h3.font-weight-bold= obj.title
+			p.text-primary.font-italic.font-weight-bold= obj.titleCaption
+		.pricing-box-price.text-primary
+			span
+			span.font-weight-bold
+				sup $
+				=obj.price
+			p= obj.time
+		.pricing-box-content
+			p= obj.content
+		.pricing-box-foot
+			a.btn.btn-primary(href='#') purchase
+
+mixin card(obj)
+	- var headingId = id=obj.parentId + 'Heading' + obj.number
+	- var bodyId = id=obj.parentId + 'Collapse' + obj.number
+
+	// Bootstrap card
+	article.card.card-custom(class=obj.cardClass)
+		.card-header(id=headingId role='tab')
+			.card-title
+				if(obj.show)
+					a(role='button' data-toggle='collapse' data-parent='#' + obj.parentId, href='#' + bodyId aria-controls=bodyId aria-expanded='true')
+						=obj.header
+						if(obj.arrow !== false)
+							.card-arrow
+				else
+					a.collapsed(role='button' data-toggle='collapse' data-parent='#' + obj.parentId href='#' + bodyId aria-controls=bodyId)
+						=obj.header
+						if(obj.arrow !== false)
+							.card-arrow
+
+		.collapse(id=bodyId class={'show': obj.show} role='tabpanel' aria-labelledby=headingId)
+			.card-body
+				block

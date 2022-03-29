@@ -1,0 +1,39 @@
+// RD Navbar Nav
+ul.rd-navbar-nav
+  li(class=(activeIndex == 1 ? 'active' : ''))
+    a(href='index.html') About Us
+    // RD Navbar Dropdown
+    ul.rd-navbar-dropdown
+      li(class=(attiveHeaderType == 1 || attiveHeaderType == 2 || attiveHeaderType == 3 || attiveHeaderType == 4 || attiveHeaderType == 5 || attiveHeaderType == 6 ? 'active' : ''))
+        a(href='#') Header Settings
+        ul.rd-navbar-dropdown
+          li(class=(attiveHeaderType == 1 ? 'active' : '')): a(href='header-style-1.html') Header Style 1
+          li(class=(attiveHeaderType == 2 ? 'active' : '')): a(href='header-style-2.html') Header Style 2
+          li(class=(attiveHeaderType == 3 ? 'active' : '')): a(href='header-style-3.html') Header Style 3
+      li(class=(attiveFooterType == 1 || attiveFooterType == 2 || attiveFooterType == 3 || attiveFooterType == 4 || attiveFooterType == 5 || attiveFooterType == 6 ? 'active' : ''))
+        a(href='#') Footer Settings
+        ul.rd-navbar-dropdown
+          li(class=(attiveFooterType == 1 ? 'active' : '')): a(href='footer-style-1.html') Footer Style 1
+          li(class=(attiveFooterType == 2 ? 'active' : '')): a(href='footer-style-2.html') Footer Style 2
+          li(class=(attiveFooterType == 3 ? 'active' : '')): a(href='footer-style-3.html') Footer Style 3
+  li(class=(activeIndex == 2 ? 'active' : ''))
+    a(href='practice-areas.html') Practice Areas
+    // RD Navbar Dropdown
+    ul.rd-navbar-dropdown
+      li
+        a(href='#') News
+      li
+        a(href='#') Events
+        ul.rd-navbar-dropdown
+          li: a(href='#') History
+          li: a(href='#') Testimonials
+          li: a(href='#') Archive
+          li: a(href='404.html') 404
+      li
+        a(href='#') Contacts
+  li(class=(activeIndex == 3 ? 'active' : ''))
+    a(href='won-cases.html') Won Cases
+  li(class=(activeIndex == 4 ? 'active' : ''))
+    a(href='news.html') News
+  li(class=(activeIndex == 5 ? 'active' : ''))
+    a(href='contacts.html') Contacts

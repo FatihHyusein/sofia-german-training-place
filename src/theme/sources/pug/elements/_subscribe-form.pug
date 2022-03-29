@@ -1,0 +1,15 @@
+mixin subscribe-form()
+  .subscribe-block
+    .subscribe-block-top
+      h4.font-weight-bold Need legal advice?
+      p We will be sending you all the best cases we've worked out with our clients and more!
+      // RD Mailform
+      form.rd-mailform.text-center(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+        .form-wrap
+          label.form-label(for="contact-email") Enter your email
+          input#contact-email.form-input(type="email" name="email" data-constraints="@Email @Required")
+        button(type="submit").btn.btn-primary Subscribe
+    .subscribe-block-bottom
+      h4 Legal insights on social networks
+      +social-list-no-gutter
+

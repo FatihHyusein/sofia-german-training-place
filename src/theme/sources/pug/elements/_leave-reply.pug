@@ -1,0 +1,18 @@
+.news-post-body
+  h4.font-weight-bold Leave a Reply
+  p.offset-top-15 Your email address will not be published. Required fields are marked *
+  // RD Mailform
+  form.rd-mailform.text-left.offset-top-20.rd-replay(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+    .form-wrap
+      label.form-label(for="contact-message") Comments *
+      textarea#contact-message.form-input(name="message" data-constraints="@Required")
+    .form-wrap
+      label.form-label(for="contact-name") Your name *
+      input#contact-name.form-input(type="text" name="name" data-constraints="@Required")
+    .form-wrap
+      label.form-label(for="contact-email-form") Your e-mail *
+      input#contact-email-form.form-input(type="email" name="email" data-constraints="@Email @Required")
+    .form-wrap
+      label.form-label(for="contact-website") Your website *
+      input#contact-website.form-input(type="text" name="website" data-constraints="@Required")
+    button(type="submit").btn.btn-primary Submit comment

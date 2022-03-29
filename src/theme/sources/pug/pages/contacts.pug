@@ -1,0 +1,25 @@
+extends  ../_skeleton
+include ../sections/_header-default
+
+include ../elements/_subscribe-form
+include ../elements/_ui-rd-audio
+include ../elements/_ui-rd-audio-with-small-img
+
+block variables
+  - pageName = 'Contacts';
+
+block title
+  title= pageName
+
+block page
+  // Page Header
+  +rd-navbar().active
+
+  // Page Content
+  main.page-content
+    include ../sections/_section-contacts-primary
+    include ../sections/_section-about-requests
+    include ../sections/_section-home-google-map
+
+  // Page Footer
+  include ../sections/_footer-default

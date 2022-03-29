@@ -9,11 +9,11 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: 'gatsby-starter-default',
-                short_name: 'starter',
+                name: 'KlasseNzimmer',
+                short_name: 'KlasseNzimmer',
                 start_url: '/',
-                background_color: '#663399',
-                theme_color: '#663399',
+                background_color: '#202f39',
+                theme_color: '#202f39',
                 display: 'minimal-ui',
                 icon: 'src/assets/images/website-icon.png', // This path is relative to the root of the site.
             },
@@ -23,18 +23,54 @@ module.exports = {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `content`,
-                path: `${__dirname}/src/_blog`,
+                path: `${__dirname}/src/_cms`,
             },
         },
         {
             resolve: `gatsby-source-filesystem`,
             options: {
-                path: `${__dirname}/src/_blog/images`,
+                path: `${__dirname}/src/_cms/blog/images`,
             },
         },
         'gatsby-plugin-sass',
         'gatsby-plugin-offline',
         `gatsby-plugin-sharp`,
-        `gatsby-transformer-sharp`
+        `gatsby-transformer-sharp`,
+        {
+            resolve: `gatsby-plugin-google-analytics`,
+            options: {
+                // The property ID; the tracking code won't be generated without it
+                trackingId: 'UA-98654586-1',
+                // Defines where to place the tracking script - `true` in the head and `false` in the body
+                head: false,
+                // Setting this parameter is optional
+                anonymize: true,
+                // Setting this parameter is also optional
+                respectDNT: true,
+                // Avoids sending pageview hits from custom paths
+                exclude: ['/preview/**', '/do-not-track/me/too/'],
+                // Delays sending pageview hits on route update (in milliseconds)
+                pageTransitionDelay: 0,
+                // Defers execution of google analytics script after page load
+                defer: false,
+                // Any additional optional fields
+                sampleRate: 5,
+                siteSpeedSampleRate: 10,
+                // defaults to false
+                enableWebVitalsTracking: true,
+            },
+        },
+        // {
+        //     resolve: 'gatsby-plugin-load-script',
+        //     options: {
+        //         src: '/js/core.min.js'
+        //     },
+        // },
+        // {
+        //     resolve: 'gatsby-plugin-load-script',
+        //     options: {
+        //         src: '/js/script.js'
+        //     },
+        // },
     ],
 };
