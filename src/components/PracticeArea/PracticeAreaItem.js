@@ -26,6 +26,7 @@ const PracticeAreaItem = ({ item }) => {
                                 <span className='icon icon-xl icon-primary fl-fill-round-icons-attachment12'/>
                                 <h4>{item.title}</h4>
                                 <div className='col-lg-12 col-md-12 col-xxl-12 col-xl-12 wow fadeIn'
+                                     style={{ overflow: 'auto', maxHeight: '50vh' }}
                                      dangerouslySetInnerHTML={{ __html: item.html }}/>
                             </div>
                         </div>
