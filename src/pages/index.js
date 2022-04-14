@@ -62,10 +62,10 @@ const HomeIndex = () => {
                           }}
                 >
                     <div>
-                        <img src='images/custom/home-slide-1.jpg'/>
+                        <img src='images/custom/home-slide-1.jpg' alt={'KlasseNzimmer'}/>
                     </div>
                     <div>
-                        <img src='images/custom/home-slide-2.jpg'/>
+                        <img src='images/custom/home-slide-2.jpg' alt={'KlasseNzimmer'}/>
                     </div>
                 </Carousel>
             </section>

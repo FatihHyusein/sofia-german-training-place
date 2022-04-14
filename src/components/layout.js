@@ -31,6 +31,7 @@ const Template = ({ children }) => {
             <script src={'/js/core.min.js'}/>
             <link rel='icon' href='/images/custom/Monte_Roza.svg' type='image/x-icon'/>
             <link rel='stylesheet' href={'/css/fonts.css'}/>
+            <meta name="description" content="Школа по Немски език за деца от 4 до 14 годишна възраст, базирана на материали от Cornelsen Verlag."/>
             <meta name='format-detection' content='telephone=no'/>
             <meta name='viewport'
                   content='width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'/>
