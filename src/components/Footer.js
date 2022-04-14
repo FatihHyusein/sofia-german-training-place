@@ -19,7 +19,7 @@ const Footer = () => (
                             ул. Йордан Йовков бл. 8В, партер
                             <br/>София
                         </p>
-                        <a href='mailto:#'>nim1985@abv.bg</a>
+                        <a href='mailto:nim1985@abv.bg'>nim1985@abv.bg</a>
                         {/*<ul className='list-inline list-inline-lg'>*/}
                         {/*  <li><a className='icon icon-white icon-xs fa-facebook' href='https://facebook.com' aria-label={'facebook'}/></li>*/}
                         {/*  <li><a className='icon icon-white icon-xs fa-linkedin' href='https://linkedin.com' aria-label={'linkedin'}/></li>*/}

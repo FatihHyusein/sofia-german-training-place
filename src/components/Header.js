@@ -15,10 +15,10 @@ const Header = () => {
                     <div className='rd-navbar-panel'>
                         <div className='rd-navbar-call'>
                             <span className='icon icon-sm icon-rounded material-design-write20 icon-primary'/>
-                            <a href='mailto:#' style={{ marginRight: 10 }}>nim1985@abv.bg</a></div>
+                            <a href='mailto:nim1985@abv.bg' style={{ marginRight: 10 }}>nim1985@abv.bg</a></div>
                         <div className='rd-navbar-call'>
                             <span className='icon icon-sm icon-rounded material-icons-local_phone icon-primary'/><a
-                            href='tel:#'>0888751082</a>
+                            href='tel:0888751082'>0888751082</a>
                         </div>
                     </div>
                 </div>
