@@ -9,8 +9,11 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
+                name: 'KlasseNzimmer',
+                short_name: 'KlasseNzimmer',
                 background_color: '#202f39',
-                theme_color: '#202f39'
+                theme_color: '#202f39',
+                icon: 'static/images/custom/Monte_Roza.svg', // This path is relative to the root of the site.
             },
         },
         `gatsby-transformer-remark`,
