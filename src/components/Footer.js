@@ -1,18 +1,16 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import Logo from '../assets/images/custom/customsvg/logo.svg';
 
 const Footer = () => (
     <footer className='page-footer'>
         <div className='container'>
             <div className='row row-40 justify-content-md-around justify-content-xl-start text-md-left'>
                 <div className='col-xl-6 col-xxl-6 col-lg-6 col-md-6'>
-                    <a href='/'><img
-                        className='brand-footer' src='/images/logo-inverse-398x97.png' alt='' width='199'
-                        height='48'/><br/>
+                    <a href='/' className={'footer-logo-link'}>
+                        <Logo style={{ width: 70, height: 50, fill: '#b59a6c' }}/> KlasseNzimmer<br/>
                         <p style={{ width: '199px', textAlign: 'right' }}>einmal anders!</p>
                     </a>
-                    <p></p>
-
                 </div>
                 <div className='col-md-6 col-lg-6 col-xl-6'>
                     <h5>Контакти</h5>

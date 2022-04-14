@@ -1,14 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { useLocation } from '@reach/router';
+import Logo from '../assets/images/custom/customsvg/logo.svg';
 
 const Header = () => {
-    const location = useLocation();
-
-    function isLocationActive(locationName) {
-        return location.pathname === locationName || location.pathname === locationName + '/' ? 'active' : '';
-    }
-
     return <header className='page-head'>
         <div className='rd-navbar-wrap'>
             <nav className='rd-navbar' data-layout='rd-navbar-fixed' data-sm-layout='rd-navbar-fixed'
@@ -37,8 +31,7 @@ const Header = () => {
                               alignItems: 'center',
                               padding: '1rem 0'
                           }}>
-                        <img src='/images/favicon.ico' alt='' width='48' height='48'
-                             style={{ display: 'flex', alignItems: 'center', }}/>
+                        <Logo style={{ width:70, height: 50, display: 'flex', alignItems: 'center',}}/>
                         <h2 style={{ color: 'black', display: 'inline' }}>KlasseNzimmer</h2>
                     </Link>
                 </div>

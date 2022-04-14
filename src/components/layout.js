@@ -29,7 +29,7 @@ const Template = ({ children }) => {
         <Helmet>
             <title>KlasseNzimmer</title>
             <script src={'/js/core.min.js'}/>
-            <link rel='icon' href='/images/favicon.ico' type='image/x-icon'/>
+            <link rel='icon' href='/images/custom/Monte_Roza.svg' type='image/x-icon'/>
             <link rel='stylesheet' href={'/css/fonts.css'}/>
             <meta name='format-detection' content='telephone=no'/>
             <meta name='viewport'

@@ -131,7 +131,7 @@ const HomeIndex = () => {
 
             <section>
                 <div className='google-map'>
-                    <Wrapper apiKey={''}
+                    <Wrapper apiKey={'AIzaSyAICQS6zusP_Lst_y-FB47FhDutwz553Ag'}
                              render={renderMapFallback}>
                         {/*<YourComponent/>*/}
                     </Wrapper>

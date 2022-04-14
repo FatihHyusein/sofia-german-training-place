@@ -60,6 +60,14 @@ module.exports = {
                 enableWebVitalsTracking: true,
             },
         },
+        {
+            resolve: 'gatsby-plugin-react-svg',
+            options: {
+                rule: {
+                    include: /customsvg/
+                }
+            }
+        }
         // {
         //     resolve: 'gatsby-plugin-load-script',
         //     options: {
