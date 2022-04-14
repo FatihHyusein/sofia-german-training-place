@@ -151,7 +151,7 @@ const HomeIndex = () => {
                                     or sale of assets.
                                 </dd>
                             </dl>
-                            <a className="d-inline-block link mt-4 mt-lg-5" href="mailto:#">privacy@demolink.org</a>
+                            <a className="d-inline-block link mt-4 mt-lg-5" href="mailto:nim1985@abv.bg">nim1985@abv.bg</a>
                         </div>
                     </div>
                 </div>
